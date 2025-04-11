@@ -1,6 +1,9 @@
 # badscript
 Interpreted language written in No-CRT C90 for a Windows target. This language is purposefully slow to prove a point.
 
+[![Watch the video](https://i.imgur.com/rIT5tpZ.png)](https://streamable.com/n6q6cc)
+
+
 ## building
    ```bash
    mkdir build

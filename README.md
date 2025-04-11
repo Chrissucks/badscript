@@ -33,10 +33,6 @@ counter = 10;
   ```
 
 ## libraries
-
-- **import "library_name":** Dynamically loads a DLL from the `bin\libraries\` folder. The DLL file must be named `library_name.dll`.
-
-- After importing, you can call the library's exported function by writing:
   
   ```plaintext
   library_name();

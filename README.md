@@ -20,7 +20,7 @@ badscript_interpreter.exe <file.bs>
   ```plaintext
   x = 5 + 3;
   y = x * 2;
-  if (y >= 16) { println("y is large"); }
+  if (y >= 16) { println("large"); }
   ```
 
 ```plaintext
@@ -28,7 +28,7 @@ counter = 10;
 ```
 
   ```plaintext
-  println("Hello, BadScript!");
+  println("Hello");
   print(123);
   ```
 

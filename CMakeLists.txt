@@ -1,0 +1,16 @@
+cmake_minimum_required(VERSION 3.10)
+project(BadScript C)
+set(CMAKE_C_STANDARD 90)
+set(CMAKE_C_STANDARD_REQUIRED TRUE)
+if(CMAKE_CONFIGURATION_TYPES)
+set(CMAKE_CONFIGURATION_TYPES MinSizeRel CACHE STRING "" FORCE)
+endif()
+set(CMAKE_BUILD_TYPE MinSizeRel)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_MINSIZEREL "${CMAKE_BINARY_DIR}/bin")
+add_executable(badscript_interpreter main.c)
+set_target_properties(badscript_interpreter PROPERTIES LINK_FLAGS "/ENTRY:WinMainCRTStartup /NODEFAULTLIB:msvcrt.lib /NODEFAULTLIB:libcmt.lib /STACK:1048576")
+add_subdirectory(libraries)
+add_custom_command(TARGET badscript_interpreter POST_BUILD
+COMMAND ${CMAKE_COMMAND} -E make_directory "${CMAKE_BINARY_DIR}/bin"
+COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_SOURCE_DIR}/example.bs" "${CMAKE_BINARY_DIR}/bin/example.bs")
